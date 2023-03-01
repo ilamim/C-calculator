@@ -8,14 +8,20 @@ extern double (*fct)(double, double);
 
 void cli(void)
 {
-    printf("Please select an operation [ +, -, x or / ] or press 'q' to quit:\n");
-    scanf("%s", &a);
-    select_operation();
+    ask_operation();
     printf("Selected operation: %c\n", a);
     printf("Please enter a number:\n");
     scanf("%lf", &x);
     printf("Please enter a second number:\n");
     scanf("%lf", &y);
+}
+
+
+void ask_operation(void)
+{
+    printf("Please select an operation [ +, -, x or / ] or press 'q' to quit:\n");
+    scanf("%s", &a);
+    select_operation();
 }
 
 
@@ -41,8 +47,8 @@ void select_operation(void)
         exit(EXIT_SUCCESS);
 	default:
 		printf("Operation error. Please try again. \n");
-        cli();
-		break;
+		ask_operation();
+        break;
 	}
 }
 
