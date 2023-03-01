@@ -17,7 +17,7 @@ double multiplication(double x, double y)
 
 double division(double x, double y)
 {
-	if (x == 0 || y == 0)
+	if (y == 0)
 	{
 		printf("Can't divide by zero.");
 		return 0;
